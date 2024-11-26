@@ -17,6 +17,7 @@
     
     <td><button type="button" class="btn btn-outline-primary" (click)="showLocation(item.address)">Show location</button>
         <button type="button" class="btn btn-outline-danger" (click)="addFavorite(item)">Like</button>
+        <button type="button" class="btn btn-outline-primary" [routerLink]="['/residences',item.id]">Details</button>
 
     </td>
   </tr>

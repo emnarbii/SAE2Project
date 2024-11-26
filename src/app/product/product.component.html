@@ -26,13 +26,18 @@
     <td>{{ p.id }}</td>
     <td>{{ p.pName }}</td>
     <td>{{ p.price }}</td>
+    <td><button [routerLink]="['/products',p.id]">Details</button></td>
   </tr>
 </table>
+
+
+
+
 <!-- property binding   []   -->
-<input [(ngModel)]="color" />
+<!-- <input [(ngModel)]="color" /> -->
 <!--tow way binding import formsModule dans app.module, combine property et event binding-->
-<h2 [style.color]="color">{{ title }}</h2>
+<!-- <h2 [style.color]="color">{{ title }}</h2> -->
 <!-- event-Binding  () -->
-<button (click)="clickMe()">Click me</button>
+<!-- <button (click)="clickMe()">Click me</button> -->
 
 <!-- two-wayBinding -->
