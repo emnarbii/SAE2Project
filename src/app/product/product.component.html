@@ -1,5 +1,5 @@
-
-<input type="text" [(ngModel)]="color">
-<h1 [style.color]="color">{{ class | uppercase}}---- {{ subject | slice:1:5  }}</h1>
-<button type="button" class="btn btn-success" (click)="onClick()">Click me</button>
-
+<input type="text" [(ngModel)]="color" />
+<h1 [style.color]="color">{{ class }}---- {{ subject }}</h1>
+<button type="button" class="btn btn-success" (click)="onClick()">
+  Click me
+</button>
