@@ -1,5 +1,38 @@
-<input type="text" [(ngModel)]="color" />
+<!-- <input type="text" [(ngModel)]="color" />
 <h1 [style.color]="color">{{ class }}---- {{ subject }}</h1>
 <button type="button" class="btn btn-success" (click)="onClick()">
   Click me
-</button>
+</button> -->
+
+<p>product works!</p>
+<!-- Interpolation  {{}}-->
+{{ title }}
+
+<!-- <ul class="list-group">
+  <li class="list-group-item" *ngFor="let p of productList">
+    {{ p.id }} {{ p.pName }} {{ p.price }}
+  </li>
+</ul> -->
+
+<table border>
+  <tr>
+    <td>Image</td>
+    <td>Id</td>
+    <td>Prooduct name</td>
+    <td>Price</td>
+  </tr>
+  <tr *ngFor="let p of productList">
+    <td><img [src]="p.img" alt="" width="50px" height="50px" /></td>
+    <td>{{ p.id }}</td>
+    <td>{{ p.pName }}</td>
+    <td>{{ p.price }}</td>
+  </tr>
+</table>
+<!-- property binding   []   -->
+<input [(ngModel)]="color" />
+<!--tow way binding import formsModule dans app.module, combine property et event binding-->
+<h2 [style.color]="color">{{ title }}</h2>
+<!-- event-Binding  () -->
+<button (click)="clickMe()">Click me</button>
+
+<!-- two-wayBinding -->
