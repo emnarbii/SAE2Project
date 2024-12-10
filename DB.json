@@ -1,0 +1,52 @@
+{
+  "residences": [
+    {
+      "id": 1,
+      "name": "El fel",
+      "address": "Borj Cedria",
+      "image": "../../assets/images/R1.jpg",
+      "status": "Disponible"
+    },
+    {
+      "id": 2,
+      "name": "El yasmine",
+      "address": "Ezzahra",
+      "image": "../../assets/images/R2.jpg",
+      "status": "Disponible"
+    },
+    {
+      "id": 5,
+      "name": "Amitie",
+      "address": "ariana",
+      "image": "../../assets/images/R4.jpg",
+      "status": "Disponible"
+    },
+    {
+      "id": 5,
+      "name": "Amitie",
+      "address": "ariana",
+      "image": "../../assets/images/R4.jpg",
+      "status": "Disponible"
+    },
+    {
+      "id": 5,
+      "name": "Amitie",
+      "address": "ariana",
+      "image": "../../assets/images/R4.jpg",
+      "status": "Disponible"
+    },
+    {
+      "id": 5,
+      "name": "Amitie",
+      "address": "ariana",
+      "image": "../../assets/images/R4.jpg",
+      "status": "Disponible"
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "pName": "souris"
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Residence } from '../core/models/Residence';
 import { CommonService } from '../core/services/common.service';
+import { ResidenceService } from '../core/services/residence.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-residences',
@@ -8,42 +10,34 @@ import { CommonService } from '../core/services/common.service';
   styleUrls: ['./residences.component.css'],
 })
 export class ResidencesComponent {
- constructor(private commonservice:CommonService){}
-  search_item:string="";
+  residenceList: Residence[] = [];
+  constructor(
+    private route: Router,
+    private commonservice: CommonService,
+    private rs: ResidenceService
+  ) {}
+  search_item: string = '';
 
-  ngOnInit(){
-    console.log(this.commonservice.getSameValueOf(this.listResidences,'status','Disponible'));
+  ngOnInit() {
+    // this.rs
+    //   .addResidence({
+    //     id: 5,
+    //     name: 'Amitie',
+    //     address: 'ariana',
+    //     image: '../../assets/images/R4.jpg',
+    //     status: 'Disponible',
+    //   }).subscribe();
+    this.rs.getResidenceList().subscribe((res) => (this.residenceList = res));
+
+    // this.rs.deleteResidence(1).subscribe((res)=>this.residenceList.filter(res.id.includes(1)));
+    console.log(
+      this.commonservice.getSameValueOf(
+        this.residenceList,
+        'status',
+        'Disponible'
+      )
+    );
   }
-  listResidences: Residence[] = [
-    {
-      id: 1,
-      name: 'El fel',
-      address: 'Borj Cedria',
-      image: '../../assets/images/R1.jpg',
-      status: 'Disponible',
-    },
-    {
-      id: 2,
-      name: 'El yasmine',
-      address: 'Ezzahra',
-      image: '../../assets/images/R2.jpg',
-      status: 'Disponible',
-    },
-    {
-      id: 3,
-      name: 'El Arij',
-      address: 'Rades',
-      image: '../../assets/images/R3.jpg',
-      status: 'Vendu',
-    },
-    {
-      id: 4,
-      name: 'El Anber',
-      address: 'inconnu',
-      image: '../../assets/images/R4.jpg',
-      status: 'En Construction',
-    },
-  ];
 
   favoris: Residence[] = [];
 
@@ -61,8 +55,9 @@ export class ResidencesComponent {
     }
     console.log(this.favoris);
   }
-filtreByAddress(){
-  return this.listResidences.filter(residance=> residance.address.toLowerCase().includes(this.search_item.toLowerCase()))
-}
-
+  filtreByAddress() {
+    return this.residenceList.filter((residance) =>
+      residance.address.toLowerCase().includes(this.search_item.toLowerCase())
+    );
+  }
 }
