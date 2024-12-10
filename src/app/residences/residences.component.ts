@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Residence } from '../core/models/Residence';
+import { CommonService } from '../core/services/common.service';
 
 @Component({
   selector: 'app-residences',
@@ -7,8 +8,12 @@ import { Residence } from '../core/models/Residence';
   styleUrls: ['./residences.component.css'],
 })
 export class ResidencesComponent {
-
+ constructor(private commonservice:CommonService){}
   search_item:string="";
+
+  ngOnInit(){
+    console.log(this.commonservice.getSameValueOf(this.listResidences,'status','Disponible'));
+  }
   listResidences: Residence[] = [
     {
       id: 1,
@@ -39,6 +44,7 @@ export class ResidencesComponent {
       status: 'En Construction',
     },
   ];
+
   favoris: Residence[] = [];
 
   showLocation(adress: string) {

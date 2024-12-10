@@ -1,0 +1,62 @@
+<h1>Sign up</h1>
+<form [formGroup]="registerForm" (submit)="onSubmit()">
+  <table>
+    <div>
+      <tr>
+        <td>username:</td>
+        <td>
+          <input type="text" id="username" formControlName="username" />
+          <div
+            *ngIf="
+              registerForm.controls['username'].invalid &&
+              registerForm.controls['username'].touched
+            "
+          >
+            <p *ngIf="registerForm.get('username')?.errors?.['required']">
+              username is required
+            </p>
+            <p *ngIf="registerForm.get('username')?.errors?.['minlength']">
+              min 3 caracters
+            </p>
+            <p *ngIf="registerForm.get('username')?.errors?.['maxlength']">
+              max 15 caracters
+            </p>
+            <p *ngIf="registerForm.get('username')?.errors?.['pattern']">
+              only lettres
+            </p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Phone</td>
+        <td><input type="text" formControlName="tel" /></td>
+      </tr>
+    </div>
+
+    <u><h4>Connexion</h4></u>
+    <div id="connexion" formGroupName="connexion">
+      <tr>
+        <td>email:</td>
+        <td><input type="text" class="email" formControlName="email" /></td>
+        <div
+          *ngIf="
+            registerForm.get('connexion')?.get('email')?.invalid &&
+            registerForm.get('connexion')?.get('email')?.touched
+          "
+        >
+          <p *ngIf="registerForm.get('connexion')?.get('email')?.errors?.['required']">
+            email is required
+          </p>
+          <p *ngIf="registerForm.get('connexion')?.get('email')?.errors?.['pattern']">
+            email format
+          </p>
+        </div>
+      </tr>
+      <tr>
+        <td>password:</td>
+        <td><input type="text" formControlName="pwd" /></td>
+      </tr>
+    </div>
+  </table>
+  <input type="submit" name="" id="" [disabled]="registerForm.invalid"/>
+</form>

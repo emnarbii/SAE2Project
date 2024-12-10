@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonService } from '../core/services/common.service';
 
 @Component({
   selector: 'app-product',
@@ -14,15 +15,20 @@ export class ProductComponent {
 //   return alert("Vous avez cliquer!!!!!");
 //  }
 
+constructor(private cs:CommonService){}
+
 title: string = 'ProductList';
   color = 'red';
   productList = [
-    { id: 1, pName: 'PC', price: '2000', img: '../assets/images/pc.jpg' },
+    { id: 1, pName: 'PC', price: '20', img: '../assets/images/pc.jpg' },
     { id: 2, pName: 'souris', price: '20', img: '../assets/images/souris.png' },
-    { id: 3, pName: 'écran', price: '200', img: '../assets/images/ecran.jpg' },
+    { id: 3, pName: 'écran', price: '20', img: '../assets/images/ecran.jpg' },
   ];
 
-  
+  ngOnInit(){
+    console.log(this.cs.getSameValueOf(this.productList,'price',20));
+
+  }
   clickMe() {
     return alert('vous avez cliquer');
   }

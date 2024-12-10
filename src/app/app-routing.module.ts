@@ -6,11 +6,13 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ResidenceDetailsComponent } from './residence-details/residence-details.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
 
   {path:"", redirectTo:"home", pathMatch:"full"},
   {path:"home",component:HomeComponent},
+  {path:'register', component:RegisterComponent},
   {path:"products",component:ProductComponent},
   {path:"residences", component:ResidencesComponent},
   {path:"residences/:idR", component:ResidenceDetailsComponent},
