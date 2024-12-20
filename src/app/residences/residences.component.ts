@@ -29,7 +29,6 @@ export class ResidencesComponent {
     //   }).subscribe();
     this.rs.getResidenceList().subscribe((res) => (this.residenceList = res));
 
-    // this.rs.deleteResidence(1).subscribe((res)=>this.residenceList.filter(res.id.includes(1)));
     console.log(
       this.commonservice.getSameValueOf(
         this.residenceList,
@@ -59,5 +58,9 @@ export class ResidencesComponent {
     return this.residenceList.filter((residance) =>
       residance.address.toLowerCase().includes(this.search_item.toLowerCase())
     );
+  }
+
+  delete(id: number) {
+    this.rs.deleteResidence(id).subscribe(() => this.ngOnInit());
   }
 }

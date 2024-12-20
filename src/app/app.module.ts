@@ -12,7 +12,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ResidenceDetailsComponent } from './residence-details/residence-details.component';
 import { RegisterComponent } from './register/register.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { AddResidenceComponent } from './add-residence/add-residence.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import {HttpClientModule} from '@angular/common/http'
     ProductDetailsComponent,
     ResidenceDetailsComponent,
     RegisterComponent,
+    AddResidenceComponent,
 
   ],
   imports: [

@@ -1,5 +1,6 @@
 <p>residences works!</p>
 <input type="text" placeholder="chercher par address" [(ngModel)]="search_item" >
+<a routerLink="/addresidence">Add new residence</a>
 <table class="table table-striped">
   <tr>
     <Th>Image</Th>
@@ -18,8 +19,10 @@
     <td><button type="button" class="btn btn-outline-primary" (click)="showLocation(item.address)">Show location</button>
         <button type="button" class="btn btn-outline-danger" (click)="addFavorite(item)">Like</button>
         <button type="button" class="btn btn-outline-primary" [routerLink]="['/residences',item.id]">Details</button>
+        <button class="btn btn-outline-danger" (click)="delete(item.id)">delete</button>
+        <button type="button" class="btn btn-outline-primary" [routerLink]="['/update',item.id]">update</button>
 
-    </td>
+      </td>
   </tr>
 </table>
 

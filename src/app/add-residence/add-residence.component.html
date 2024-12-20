@@ -1,0 +1,85 @@
+<p>formresidence works!</p>
+<div class="container">
+  <form [formGroup]="residenceform">
+    <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Id</span>
+        </div>
+        <input type="text" aria-label="id" class="form-control" formControlName="id">
+        <div class="alert alert-danger" *ngIf="id?.invalid &&(id?.touched || id?.dirty)">
+          invalid id
+        </div>
+      </div>
+    <br />
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">name</span>
+      </div>
+      <input
+        type="text"
+        aria-label="First name"
+        class="form-control"
+        formControlName="name"
+      />
+    </div>
+    <div
+      class="alert alert-danger"
+      *ngIf="name?.invalid && (name?.touched || name?.dirty)"
+    >
+      invalid name
+    </div>
+    <br />
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">address</span>
+      </div>
+      <input
+        type="text"
+        aria-label="First name"
+        class="form-control"
+        formControlName="address"
+      />
+      <div class="alert alert-danger" *ngIf="address?.errors?.['maxlength']">
+        max length is 10 for name
+      </div>
+    </div>
+    <br />
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Image</span>
+      </div>
+      <input
+        type="text"
+        aria-label="First name"
+        class="form-control"
+        formControlName="image"
+      />
+    </div>
+    <br />
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">status</span>
+      </div>
+      <input
+        type="text"
+        aria-label="First name"
+        class="form-control"
+        formControlName="status"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="status?.invalid && (status?.touched || status?.dirty)"
+      >
+        status is not false
+      </div>
+    </div>
+
+    <button
+      class="btn btn-primary"
+      (click)="add()"
+      [disabled]="residenceform!.invalid"
+    >
+      Save
+    </button>
+  </form>
+</div>
